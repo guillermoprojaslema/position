@@ -65,11 +65,6 @@ class CounterController extends Controller
         if ($request->has('website') && $request->ajax()) {
             $html = file_get_contents($request->input('website'));
 
-            dd([
-                'css' => $this->countCssExtensions($html),
-                'images' => $this->countImagesExtensions($html),
-            ]);
-
             return response()->json([
                 'css' => $this->countCssExtensions($html),
                 'images' => $this->countImagesExtensions($html),
