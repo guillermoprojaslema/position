@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/counter/ajx_counter',
+    [\App\Http\Controllers\CounterController::class, 'ajx_counter',])->name('counter.ajx_counter');
+
+
+
+
+
+
