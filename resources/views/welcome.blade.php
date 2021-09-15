@@ -38,7 +38,7 @@
                         archivos
                         css</p>
 
-                    <form @click.prevent="onSubmit" action="{{route('counter.ajx_counter')}}" class="row g-3" method="GET">
+                    <form @click.prevent="onSubmit" action="{{route('counter.ajx_counter')}}" class="row g-3" method="POST">
                         @csrf
                         <div class="col-auto">
                             <label for="website" class="visually-hidden">Url</label>
