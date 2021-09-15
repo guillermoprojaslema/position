@@ -11,7 +11,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 </head>
 <body>
@@ -38,24 +38,25 @@
                         archivos
                         css</p>
 
-                    <form action="{{route('ajx_counter')}}" class="row g-3" method="get">
+                    <form @click.prevent="onSubmit" action="{{route('counter.ajx_counter')}}" class="row g-3" method="GET">
+                        @csrf
                         <div class="col-auto">
                             <label for="input" class="visually-hidden">Url</label>
-                            <input type="text" class="form-control" id="input" placeholder="Ej: www.google.cl">
+                            <input name="url" type="text" class="form-control" id="input"
+                                   placeholder="Ej: www.google.cl">
                         </div>
                         <div class="col-auto">
                             <button type="submit" class="btn btn-primary mb-3">Averiguar</button>
                         </div>
                     </form>
                     <ul>
-                        <li v-for="count in counts" v-text="">
+                        <li v-for="extension in counts">
                             @{{ count }}
                         </li>
                     </ul>
 
                 </div>
             </div>
-
 
 
             <footer class="pt-3 mt-4 text-muted border-top">
