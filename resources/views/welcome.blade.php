@@ -41,19 +41,19 @@
                     <form @click.prevent="onSubmit" action="{{route('counter.ajx_counter')}}" class="row g-3" method="GET">
                         @csrf
                         <div class="col-auto">
-                            <label for="input" class="visually-hidden">Url</label>
-                            <input name="url" type="text" class="form-control" id="input"
+                            <label for="website" class="visually-hidden">Url</label>
+                            <input name="website" type="text" class="form-control" id="website"
                                    placeholder="Ej: www.google.cl">
                         </div>
                         <div class="col-auto">
                             <button type="submit" class="btn btn-primary mb-3">Averiguar</button>
                         </div>
                     </form>
-                    <ul>
-                        <li v-for="extension in counts">
-                            @{{ count }}
-                        </li>
-                    </ul>
+                    {{--<ul>--}}
+                        {{--<li v-for="extension in counts">--}}
+                            {{--@{{ count }}--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
 
                 </div>
             </div>
